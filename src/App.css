@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+/* Header */
+.header {
+    text-align: center;
+}
+
+/* Add Task */
+.add-task__input-field {
+    height: 30px;
+    margin: 6px 0;
+}
+
+.add-task__actions {
+    display: flex;
+    flex-direction: column; /* column on a narrow screen*/
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+@media screen and (min-width: 600px) {
+    .add-task__actions { /* when becoming wider then change of flex direction from column to row*/
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .add-task__input-field {
+        flex-basis: 75%;
+    }
+
+    .add-task__actions .button {
+        flex-basis: 25%;
+    }
+}
+
+/* Tasks */
+.task__text {
+    margin-bottom: 0;
+}
+
+.task {
+    margin-bottom: 16px;
+}
+
+.task--complete .task__text {
+    text-decoration: line-through;
+}
+
+.all-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 0 auto; /* to be central on page*/
+    max-width: 700px; /* not to spread too wide*/
+}
+
+.incomplete-tasks, .complete-tasks {
+    flex: 1 1 auto; /*children to grow and shrink at the same rate, space shared aitomatically */
+}
+
+.task-list {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
